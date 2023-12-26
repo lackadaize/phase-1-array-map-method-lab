@@ -11,6 +11,27 @@ const tutorials = [
   'what is JSONP?'
 ];
 
-const titleCased = () => {
-  return tutorials
-}
+// titleCased
+// returns an array with title case tutorial names
+const titleCased = tutorials.map((tutorial) => {
+  const words = tutorial.split(" ");
+  for (let i = 0; i < words.length; i++) { 
+    words[i] = words[i][0].toUpperCase() + words[i].substring(1);
+  }
+  tutorial = words.join(" ");
+  return tutorial;
+});
+
+console.log(titleCased);
+// [
+//   "What Does The This Keyword Mean?",
+//   "What Is The Constructor OO Pattern?",
+//   "Implementing Blockchain Web API",
+//   "The Test Driven Development Workflow",
+//   "What Is NaN And How Can We Check For It",
+//   "What Is The Difference Between StopPropagation And PreventDefault?",
+//   "Immutable State And Pure Functions",
+//   "What Is The Difference Between == And ===?",
+//   "What Is The Difference Between Event Capturing And Bubbling?",
+//   "What Is JSONP?"
+// ]
